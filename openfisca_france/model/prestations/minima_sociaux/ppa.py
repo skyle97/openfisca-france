@@ -78,6 +78,26 @@ class ppa_montant_forfaitaire_familial_non_majore(Variable):
 
         return ppa.montant_de_base * taux_non_majore
 
+class ppa_montant_forfaitaire_logement(Variable):
+    value_type = float
+    entity = Famille
+    label = u"Montant forfaitaire familial (sans majoration)"
+    definition_period = MONTH
+
+    def formula(famille, period, parameters, mois_demande):
+        nb_parents = famille('nb_parents', period)
+        nb_enfants = famille('rsa_nb_enfants', period)
+        ppa = parameters(mois_demande).prestations.minima_sociaux.ppa
+
+        nb_personnes = nb_parents + nb_enfants
+
+        taux_non_majore = (
+            1 +
+            (nb_personnes >= 2) * ppa.taux_deuxieme_personne +
+            (nb_personnes >= 3) * ppa.taux_troisieme_personne
+            )
+
+        return ppa.montant_de_base * taux_non_majore
 
 class ppa_montant_forfaitaire_familial_majore(Variable):
     value_type = float
@@ -311,7 +331,7 @@ class ppa_forfait_logement(Variable):
         avantage_al = aide_logement > 0
 
         params = parameters(period).prestations.minima_sociaux.rsa
-        montant_base = famille('ppa_montant_forfaitaire_familial_non_majore', period, extra_params = [period])
+        montant_base = famille('ppa_montant_forfaitaire_logement', period, extra_params = [period])
         montant_forfait = montant_base * (
             (np_pers == 1) * params.forfait_logement.taux_1_personne +
             (np_pers == 2) * params.forfait_logement.taux_2_personnes +
