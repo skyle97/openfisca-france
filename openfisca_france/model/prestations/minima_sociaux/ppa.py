@@ -82,6 +82,7 @@ class ppa_montant_forfaitaire_logement(Variable):
     value_type = float
     entity = Famille
     label = u"Montant forfaitaire familial (sans majoration)"
+    reference = u"https://www.legifrance.gouv.fr/affichCodeArticle.do;jsessionid=9A3FFF4142B563EB5510DDE9F2870BF4.tplgfr41s_2?idArticle=LEGIARTI000031675988&cidTexte=LEGITEXT000006073189&dateTexte=20171222"
     definition_period = MONTH
 
     def formula(famille, period, parameters, mois_demande):
