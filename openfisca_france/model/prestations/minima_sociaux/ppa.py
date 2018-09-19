@@ -318,7 +318,7 @@ class ppa_forfait_logement(Variable):
     reference = u"https://www.legifrance.gouv.fr/affichCodeArticle.do;jsessionid=9A3FFF4142B563EB5510DDE9F2870BF4.tplgfr41s_2?idArticle=LEGIARTI000031675988&cidTexte=LEGITEXT000006073189&dateTexte=20171222"
     definition_period = MONTH
 
-    def formula(famille, period, parameters):
+    def formula(famille, period, parameters, mois_demande):
         np_pers = famille('nb_parents', period) + famille('rsa_nb_enfants', period)
         aide_logement = famille('aide_logement', period)
         statut_occupation_logement = famille.demandeur.menage('statut_occupation_logement', period)
@@ -332,7 +332,16 @@ class ppa_forfait_logement(Variable):
         avantage_al = aide_logement > 0
 
         params = parameters(period).prestations.minima_sociaux.rsa
-        montant_base = famille('ppa_montant_forfaitaire_logement', period, extra_params = [period])
+        ppa = parameters(mois_demande).prestations.minima_sociaux.ppa
+
+
+        taux_non_majore = (
+                1 +
+                (np_pers >= 2) * ppa.taux_deuxieme_personne +
+                (np_pers >= 3) * ppa.taux_troisieme_personne
+        )
+
+        montant_base = ppa.montant_de_base * taux_non_majore
         montant_forfait = montant_base * (
             (np_pers == 1) * params.forfait_logement.taux_1_personne +
             (np_pers == 2) * params.forfait_logement.taux_2_personnes +
@@ -352,7 +361,7 @@ class ppa_fictive(Variable):
     definition_period = MONTH
 
     def formula(famille, period, parameters, mois_demande):
-        forfait_logement = famille('ppa_forfait_logement', mois_demande)
+        forfait_logement = famille('ppa_forfait_logement', period, extra_params = [mois_demande])
         ppa_majoree_eligibilite = famille('rsa_majore_eligibilite', mois_demande)
 
         elig = famille('ppa_eligibilite', period, extra_params = [mois_demande])

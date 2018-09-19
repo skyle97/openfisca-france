@@ -3,7 +3,11 @@
   absolute_error_margin: 0.03
   familles:
     parents: ["personne1"]
-    aide_logement: 80
+    aide_logement:
+      2018-05: 80
+      2018-04: 80
+      2018-03: 80
+      2018-02: 80
   menages:
     personne_de_reference: "personne1"
     statut_occupation_logement: locataire_vide
@@ -24,7 +28,11 @@
   familles:
     parents: ["personne1"]
     enfants: ["enfant1"]
-    aide_logement: 150
+    aide_logement:
+      2018-05: 150
+      2018-04: 150
+      2018-03: 150
+      2018-02: 150
     asf:
       2018-05: 115.30
       2018-04: 115.30
@@ -56,7 +64,11 @@
   familles:
     parents: ["personne1"]
     enfants: ["enfant1", "enfant2"]
-    aide_logement: 200
+    aide_logement:
+      2018-05: 200
+      2018-04: 200
+      2018-03: 200
+      2018-02: 200
     asf:
       2018-05: 230.60
       2018-04: 230.60
@@ -94,7 +106,11 @@
   absolute_error_margin: 0.03
   familles:
     parents: ["personne1", "personne2"]
-    aide_logement: 200
+    aide_logement:
+      2018-05: 200
+      2018-04: 200
+      2018-03: 200
+      2018-02: 200
   foyers_fiscaux:
     declarants: ["personne1", "personne2"]
   menages:
@@ -125,7 +141,11 @@
   familles:
     parents: ["personne1", "personne2"]
     enfants: ["enfant1"]
-    aide_logement: 200
+    aide_logement:
+      2018-05: 200
+      2018-04: 200
+      2018-03: 200
+      2018-02: 200
   foyers_fiscaux:
     declarants: ["personne1", "personne2"]
     personnes_a_charge: ["enfant1"]
@@ -160,7 +180,11 @@
   familles:
     parents: ["personne1", "personne2"]
     enfants: ["enfant1", "enfant2"]
-    aide_logement: 250
+    aide_logement:
+      2018-05: 200
+      2018-04: 200
+      2018-03: 200
+      2018-02: 200
     af:
       2018-05: 131.16
       2018-04: 131.16
@@ -202,7 +226,11 @@
   familles:
     parents: ["personne1", "personne2"]
     enfants: ["enfant1", "enfant2", "enfant3"]
-    aide_logement: 280
+    aide_logement:
+      2018-05: 280
+      2018-04: 280
+      2018-03: 280
+      2018-02: 280
     af:
       2018-05: 299.20
       2018-04: 299.20
@@ -255,7 +283,11 @@
   absolute_error_margin: 0.03
   familles:
     parents: ["personne1", "personne2"]
-    aide_logement: 200
+    aide_logement:
+      2018-05: 200
+      2018-04: 200
+      2018-03: 200
+      2018-02: 200
   foyers_fiscaux:
     declarants: ["personne1", "personne2"]
   menages:
@@ -286,7 +318,11 @@
   familles:
     parents: ["personne1", "personne2"]
     enfants: ["enfant1"]
-    aide_logement: 80
+    aide_logement:
+      2018-05: 80
+      2018-04: 80
+      2018-03: 80
+      2018-02: 80
   foyers_fiscaux:
     declarants: ["personne1", "personne2"]
     personnes_a_charge: ["enfant1"]
@@ -321,7 +357,11 @@
   familles:
     parents: ["personne1", "personne2"]
     enfants: ["enfant1", "enfant2"]
-    aide_logement: 100
+    aide_logement:
+      2018-05: 100
+      2018-04: 100
+      2018-03: 100
+      2018-02: 100
     af:
       2018-05: 131.16
       2018-04: 131.16
@@ -367,7 +407,11 @@
   absolute_error_margin: 0.03
   familles:
     parents: ["personne1"]
-    aide_logement: 80
+    aide_logement:
+      2018-05: 80
+      2018-04: 80
+      2018-03: 80
+      2018-02: 80
   foyers_fiscaux:
     declarants: ["personne1"]
   menages:
