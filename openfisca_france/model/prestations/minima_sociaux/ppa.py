@@ -334,7 +334,6 @@ class ppa_forfait_logement(Variable):
         params = parameters(period).prestations.minima_sociaux.rsa
         ppa = parameters(mois_demande).prestations.minima_sociaux.ppa
 
-
         taux_non_majore = (
                 1 +
                 (np_pers >= 2) * ppa.taux_deuxieme_personne +
