@@ -1,5 +1,7 @@
 # Changelog
 
+
+
 ### 24.11.2 [#1132](https://github.com/openfisca/openfisca-france/pull/1132)
 
 * Changement mineur.

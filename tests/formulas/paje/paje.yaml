@@ -5,6 +5,7 @@
 
 - name: "Avant le 1er avril 2014, le montant de base de la PAJE est proprotionnel à la BMAF"
   period: 2013-01
+
   relative_error_margin: 0.01
   individus:
     - id: "parent1"

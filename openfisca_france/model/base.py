@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+
+
 from openfisca_core.model_api import *
 from openfisca_france.entities import Famille, FoyerFiscal, Individu, Menage
 

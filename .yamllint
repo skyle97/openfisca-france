@@ -6,4 +6,6 @@ rules:
   # Disable warning level rules to remove flood in yamllint output
   # YAML file should be modified to comply to those rules before activation
   indentation: disable
-  line-length: disable
+  line-length:
+    max: 1
+    level: error
