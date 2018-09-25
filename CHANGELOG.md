@@ -7,8 +7,8 @@
 * Zones impactées :
   - `model\prestations\minima_sociaux\ppa`
 * Détails :
-  - Correction du forfait logement en fonction du nombre de personnes au foyer
-  - Ajoute des tests pour la revalorisation de la prime d'activité
+  - Correction de la formule de calcul du forfait logement en fonction du nombre de personnes au foyer.
+  - Correction des tests de revalorisation de la prime d'activité.
 
 # 24.8.0 [#1082](https://github.com/openfisca/openfisca-france/pull/1082)
 
